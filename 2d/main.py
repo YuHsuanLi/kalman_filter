@@ -6,7 +6,7 @@ from kalman_filter import KalmanFilter
 center = np.load('center.npy')
 RQratios = [0.2, 0.5, 1, 2, 5]
 
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(12, 8), dpi=60)
 plt.subplot(231)
 plt.plot(center[:, 0], center[:, 1], label='w/o kf', color='C0')
 plt.legend(loc='upper center')
@@ -23,5 +23,5 @@ for i, RQratio in enumerate(RQratios):
 	plt.subplot(230+i+2)
 	plt.plot(center_kf_list[:, 0], center_kf_list[:, 1], label='w/ kf, RQratio= ' + str(RQratio), color='C'+str(i+1))
 	plt.legend(loc='upper center')
-plt.savefig('result.png')
+plt.savefig('result.jpg')
 plt.show()	
